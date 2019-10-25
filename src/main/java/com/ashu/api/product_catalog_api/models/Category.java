@@ -1,5 +1,6 @@
 package com.ashu.api.product_catalog_api.models;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
 	private int id;
+
 	@Column(unique = true)
 	@Size(min=5 , max=60)
 	@NotNull(message = "Can not be Null")
@@ -30,7 +32,7 @@ public class Category {
 	public Category() {
 	}
 
-
+	@ApiModelProperty(hidden = true)
 	public int getId() {
 		return id;
 	}
